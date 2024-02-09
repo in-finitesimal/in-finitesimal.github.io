@@ -52,12 +52,21 @@ h1 {
 }
 
 button {
-  display: flex;
-  font-size: 16px;
-  padding: 10px;
-  margin: 150px;
-
+  position: absolute;    
+  margin-top: 20px;
+    z-index: 20;
 }
+
+#p5_loading { 
+  background: #000; 
+  text-align:center; 
+  display:block; 
+  width:100%; 
+  top:50%; 
+  margin-top:-87px; 
+  margin-top:-75px; 
+  position:absolute; }
+
 
 #contenu {
     position: relative;
@@ -135,3 +144,5 @@ position: relative;
 height: 233px;
 position: relative;
 }
+
+

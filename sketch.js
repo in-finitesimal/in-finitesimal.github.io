@@ -1,3 +1,17 @@
+
+// variables para el audio
+
+var left = [];
+
+var button;
+
+let value = 0;
+let allSoundsAreLoaded = false;
+let playLeft;
+let stopped = false;
+
+
+
 let xspacing = 303; // How far apart should each horizontal position be spaced
 
 let xspacing2 = 65; // How far apart should each horizontal position be spaced
@@ -33,6 +47,10 @@ var dato = 1;
 function setup() {
     createCanvas(windowWidth, windowHeight);
 
+    //background(0);
+    noStroke();
+    loadAllSounds();
+
     w = width;
 
     textFont("Work Sans");
@@ -47,6 +65,55 @@ function setup() {
 }
 
 function draw() {
+
+
+    // Before all the sounds are loaded
+    if (!allSoundsAreLoaded) {
+        fill(223, 77, 182);
+        // agregar loading
+        
+        ellipse(windowWidth / 2, windowHeight / 2, Math.sin(frameCount * 0.1) * 40);
+        fill(255, 170, 0, 90);
+        ellipse(windowWidth / 2, windowHeight / 2, Math.sin(frameCount * 0.05) * 30);
+        fill(255, 90);
+        let loaded = true;
+        for (let i = 0; i < left.length; i++) {
+            if (left[i].isLoaded() == false) {
+                loaded = false;
+            }
+        }
+        // for (let i = 0; i < right.length; i++) {
+        //     if (right[i].isLoaded() == false) {
+        //         loaded = false;
+        //     }
+
+        if (loaded) {
+            // console.log("EVERYTHING IS LOADED NOW");
+            allSoundsAreLoaded = true;
+            
+            playLeft = function() {
+               
+                if (stopped == false) {
+                 
+                    let s = random(left);
+                    s.play();
+                    setTimeout(playLeft, (s.lenght()));
+
+                
+                }
+
+            };
+
+        
+        }
+
+        }
+
+
+    // When all the sounds are loaded
+    else {
+
+
 
     contando++;
 
@@ -169,4 +236,41 @@ function draw() {
 
     }
 
+            push();
+        play();
+        pop();
+
+        push();
+        stop();
+        pop();
+
+        // push();
+        // paneando();
+        // pop();
+
+        // push();
+        // knob();
+        // pop();
+
+
+        }
+
+
+}
+
+function loadAllSounds() {
+
+    left.push(loadSound('left/de-madera.mp3'));
+    left.push(loadSound('left/de-marea.mp3'));
+
+    // left.push(loadSound('left/muchacha.mp3'));
+    // left.push(loadSound('left/ana-no-duerme.mp3'));
+
+}
+
+
+// On window resize, update the canvas size
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
 }
