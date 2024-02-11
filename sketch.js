@@ -1,6 +1,10 @@
 
 // variables para el audio
 
+
+var x_a;
+var y_a;
+
 var left = [];
 
 var button;
@@ -65,54 +69,6 @@ function setup() {
 }
 
 function draw() {
-
-
-    // Before all the sounds are loaded
-    if (!allSoundsAreLoaded) {
-        fill(223, 77, 182);
-        // agregar loading
-        
-        ellipse(windowWidth / 2, windowHeight / 2, Math.sin(frameCount * 0.1) * 40);
-        fill(255, 170, 0, 90);
-        ellipse(windowWidth / 2, windowHeight / 2, Math.sin(frameCount * 0.05) * 30);
-        fill(255, 90);
-        let loaded = true;
-        for (let i = 0; i < left.length; i++) {
-            if (left[i].isLoaded() == false) {
-                loaded = false;
-            }
-        }
-        // for (let i = 0; i < right.length; i++) {
-        //     if (right[i].isLoaded() == false) {
-        //         loaded = false;
-        //     }
-
-        if (loaded) {
-            // console.log("EVERYTHING IS LOADED NOW");
-            allSoundsAreLoaded = true;
-            
-            playLeft = function() {
-               
-                if (stopped == false) {
-                 
-                    let s = random(left);
-                    s.play();
-                    setTimeout(playLeft, (s.lenght()));
-
-                
-                }
-
-            };
-
-        
-        }
-
-        }
-
-
-    // When all the sounds are loaded
-    else {
-
 
 
     contando++;
@@ -235,6 +191,58 @@ function draw() {
         //window.location.reload();
 
     }
+
+x_a = windowWidth - 100;
+y_a = 50;
+
+    // Before all the sounds are loaded
+if (!allSoundsAreLoaded) {
+        fill(255);
+        // agregar loading
+        
+        ellipse(x_a, y_a, Math.sin(frameCount * 0.1) * 20);
+        fill(0, 0, 0);
+        ellipse(x_a, y_a, Math.sin(frameCount * 0.1) * 10);
+        fill(255);
+        let loaded = true;
+        for (let i = 0; i < left.length; i++) {
+            if (left[i].isLoaded() == false) {
+                loaded = false;
+            }
+        }
+        
+                // for (let i = 0; i < right.length; i++) {
+        //     if (right[i].isLoaded() == false) {
+        //         loaded = false;
+        //     }
+
+        if (loaded) {
+            // console.log("EVERYTHING IS LOADED NOW");
+            allSoundsAreLoaded = true;
+            
+            playLeft = function() {
+               
+                if (stopped == false) {
+                 
+                    let s = random(left);
+                    s.play();
+                    setTimeout(playLeft, (s.lenght()));
+
+                
+                }
+
+            };
+
+        
+        }
+
+        }
+
+
+    // When all the sounds are loaded
+    else {
+
+
 
             push();
         play();

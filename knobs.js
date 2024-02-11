@@ -31,9 +31,9 @@ x_s = windowWidth - 100 + 50;
 
     }
 
-    // noStroke();
-    // rectMode(CENTER);
-    // rect(x_s, y_s, d_s, d_s);
+    noStroke();
+    rectMode(CENTER);
+    rect(x_s, y_s, d_s, d_s);
 
 }
 
