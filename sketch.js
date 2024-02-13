@@ -74,9 +74,9 @@ clear();
         fill(255);
         // agregar loading
         
-        ellipse(windowWidth / 2, windowHeight / 2, Math.sin(frameCount * 0.1) * 20);
+        ellipse(windowWidth / 2, windowHeight / 2, Math.sin(frameCount * 0.07) * 20);
         fill(0, 0, 0);
-        ellipse(windowWidth / 2, windowHeight / 2, Math.sin(frameCount * 0.1) * 10);
+        ellipse(windowWidth / 2, windowHeight / 2, Math.sin(frameCount * 0.07) * 10);
         fill(255);
         let loaded = true;
         for (let i = 0; i < left.length; i++) {
