@@ -200,9 +200,9 @@ if (!allSoundsAreLoaded) {
         fill(255);
         // agregar loading
         
-        ellipse(x_a, y_a, Math.sin(frameCount * 0.1) * 20);
+        ellipse(x_a, y_a, Math.sin(frameCount * 0.01) * 20);
         fill(0, 0, 0);
-        ellipse(x_a, y_a, Math.sin(frameCount * 0.1) * 10);
+        ellipse(x_a, y_a, Math.sin(frameCount * 0.01) * 10);
         fill(255);
         let loaded = true;
         for (let i = 0; i < left.length; i++) {
