@@ -93,9 +93,9 @@ button {
 
 code {
   background-color: #00000000;
-  font-family: InputMono-Regular;
-  src: url("InputMono-Regular.ttf");
-  font-size : 11px;
+  font-family: MikadoRegular;
+  src: url("MikadoRegular.otf");
+  font-size : 13px;
   letter-spacing: 0.7px;
   border: solid white 0px;
   color: #000;
