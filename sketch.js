@@ -97,7 +97,7 @@ clear();
                     let s = random(left);
                     s.play();
                     // console.log("playing the next left");
-                    setTimeout(playNextLeft, (s.duration()) * 990);
+                    setTimeout(playNextLeft, (s.duration()) * 2000);
                 }
 
             };
@@ -106,7 +106,7 @@ clear();
                     let s = random(right);
                     s.play();
                     // console.log("playing the next right");
-                    setTimeout(playNextRight, (s.duration() * 0.9) * 1000);
+                    setTimeout(playNextRight, (s.duration()) * 2000);
                 }
             };
             // for (let i = 0; i < left.length; i++) {
