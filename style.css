@@ -102,6 +102,11 @@ code {
   text-align: right;
 }
 
+@font-face {
+      font-family: MikadoRegular;
+      src: url("MikadoRegular.otf");
+    }
+
 canvas {
   overflow-y: hidden;
   position: fixed;
